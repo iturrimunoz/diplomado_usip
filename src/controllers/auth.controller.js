@@ -8,10 +8,11 @@ async function login (req, res){
     try{
         const { username, password} = req.body;
 
-        const user = await User.findOne({where: {username}});
+        const user = await User.findOne({where: { username } });
         if(!user) {
             return res.status(404).json({message: 'User not found'});
         }
+        
         if(!(await comparar (password, user.password)))
             return res.status(403).json({message: 'Usuario no Autorizado'});
 

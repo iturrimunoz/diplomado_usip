@@ -3,7 +3,7 @@ import logger from '../logs/logger.js';
 
 export const encriptar = async (texto) => {
     try{
-       const saltRounds = +process.env.BCRYPT_SALT_ROUNDS
+       const saltRounds = + process.env.BCRYPT_SALT_ROUNDS
        return await bcrypt.hash(texto, saltRounds) 
 
     } catch(error) {
