@@ -9,7 +9,7 @@ const tasks = await Task.findAll({
     order: [['name', 'ASC']],
     where: [userId]
 });
-res.josn(tasks);
+res.json(tasks);
 } catch(error){
 logger.error('Error getTasks:' + error);
 res.status(500).json({message: 'Server error'});
