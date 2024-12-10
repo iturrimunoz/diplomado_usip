@@ -17,8 +17,8 @@ res.status(500).json({message: 'Server error'});
 }
 
 async function createTask(req, res){
-const {userId} = req.user;
-const{name} = req.body;
+const { userId } = req.user;
+const { name } = req.body;
 try{
 const task = await Task.create({
     name,
